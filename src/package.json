@@ -1,0 +1,19 @@
+{
+  "name": "ice",
+  "version": "0.0.1",
+  "author": "hphamid",
+  "dependencies": {
+    "backtory-sdk": "0.0.34",
+    "crypto": "0.0.3",
+    "mustache": "^2.2.1",
+    "node-uuid": "^1.4.7",
+    "unirest": "^0.5.0"
+  },
+  "devDependencies": {
+    "annotation-parser": "git+https://github.com/hphamid/node-annotation-parser.git",
+    "atpl": "^0.9.2",
+    "dot": "^1.0.3",
+    "leFunc": "^1.2.5",
+    "mustache": "^2.2.1"
+  }
+}
