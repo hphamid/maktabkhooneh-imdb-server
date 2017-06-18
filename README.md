@@ -49,6 +49,7 @@ module.exports = config;
 cd /path/to/project/api
 npm install
 cd /path/to/project/src
+npm install
 cd ..
 node preCompile.js
 ```
