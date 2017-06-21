@@ -119,8 +119,8 @@ function makeLambdaObjectToWrite(appContext) {
                     + JSON.stringify(element) + ", " + JSON.stringify(toReturn[url]));
             }
             var memoryLimit = element.extraData.memoryLimit || 128;
-            var timeLimit = element.extraData.timeLimit || 100000;
-            var schedulingCron = element.extraData.schedulingCron
+            var timeLimit = element.extraData.timeLimit || 6000;
+            var schedulingCron = element.extraData.schedulingCron;
             toReturn[url] = {
                 handlerName: handlerAddress,
                 timeLimitInMilliSeconds: timeLimit,

@@ -18,7 +18,6 @@ const DefaultUserProfilePic = "https://robohash.org/";
  * @Post("registerUser")
  * @RequestType("RegisterUserRequest")
  * @ResponseType("RegisterUserResponse")
- * @Time(10000)
  */
 exports.registerUser = function (Backtory, UserInfoRepo, ErrorCodes, MergeObject, requestData) {
 
@@ -56,7 +55,6 @@ exports.registerUser = function (Backtory, UserInfoRepo, ErrorCodes, MergeObject
  * @Post("login")
  * @RequestType("LoginUserRequest")
  * @ResponseType("LoginUserResponse")
- * @Time(10000)
  */
 exports.login = function (ErrorCodes, requestData) {
     var username = requestData.username.value();
@@ -95,7 +93,6 @@ function loginInternal(username, password) {
  * @Post("refreshLogin")
  * @RequestType("RefreshLoginRequest")
  * @ResponseType("LoginUserResponse")
- * @Time(10000)
  */
 exports.refreshLogin = function (requestData) {
     var refreshToken = requestData.refreshToken.value();
@@ -129,7 +126,6 @@ exports.refreshLogin = function (requestData) {
  * @Post("forgotPassword")
  * @RequestType("ForgotPasswordRequest")
  * @ResponseType("FailedSuccessResponse")
- * @Time(10000)
  */
 exports.forgotPassword = function (requestData) {
     var username = requestData.username.value();
