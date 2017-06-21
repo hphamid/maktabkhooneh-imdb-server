@@ -58,13 +58,15 @@ ModuleRuntimeInformation.prototype.getRuntimeAddress = function(fromAddress){
     if(Path.extname(fromAddress) !== ''){
         fromAddress = Path.dirname(fromAddress);
     }
-    return Path.relative(fromAddress, this.moduleRuntimeAddress);
+    const relative = Path.relative(fromAddress, this.moduleRuntimeAddress);
+    // console.log("relative is " + relative);
+    return relative.replace(/\\/g, '\/');
 };
 
 module.exports = ModuleRuntimeInformation;
 
 module.exports.makeFromModuleInfo = function(moduleInfo){
-    var toReturn = new ModuleRuntimeInformation();
+    const toReturn = new ModuleRuntimeInformation();
     toReturn.setFromModuleInfo(moduleInfo);
     return toReturn;
 };
