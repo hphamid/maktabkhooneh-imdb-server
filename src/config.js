@@ -1,3 +1,5 @@
+let config = {};
+
 config.authInstanceId = "<<X-Backtory-Authentication-Id>>";
 config.objectSorageInstanceId = "<<X-Backtory-Object-Storage-Id>>";
 config.integratedMasterKey = "<<X-Backtory-Authentication-Key (Master)>>";

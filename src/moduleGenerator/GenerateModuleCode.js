@@ -24,7 +24,8 @@ const AspectData = require('../annotationSystem/data/AspectData.js');
 function getModuleRequireAddressInfo(moduleName, baseModuleInfo, dependencyLoader){
     var loadedModuleInfo = dependencyLoader.getModuleInfo(moduleName);
     //console.log(loadedModuleInfo.getRuntimeAddress(baseModuleInfo.moduleRuntimeAddress), baseModuleInfo.moduleRuntimeAddress) ;
-    return loadedModuleInfo.getRuntimeAddress(baseModuleInfo.moduleRuntimeAddress);
+    var runtimeAddress = loadedModuleInfo.getRuntimeAddress(baseModuleInfo.moduleRuntimeAddress);
+    return runtimeAddress.replace(/\\/g, '\/');
 }
 
 function getOriginalModuleAddress(moduleInfo){
