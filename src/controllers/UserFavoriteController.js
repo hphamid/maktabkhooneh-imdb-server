@@ -67,4 +67,23 @@ module.exports.getFavorites = function (activeUser, userSkip, userLimit, UserFav
 };
 
 
+/**
+ * @AutoWired()
+ * @Controller()
+ * @Post("getUserFavoriteMoviesById")
+ * @RequestType("PaginationIdRequest")
+ * @ResponseType("MovieListItemResponseList")
+ * @LoginRequired()
+ * @Pagination()
+ * @ActiveUser()
+ */
+module.exports.getUserFavorites = function (requestData, activeUser, userSkip, userLimit, UserFavoriteRepo,
+                                            MovieResponseHelper) {
+    let userId = requestData.id.value();
+    return UserFavoriteRepo.getUserFavoriteItemList(userId, userSkip, userLimit).then(function(rating){
+        return MovieResponseHelper.makeUserFavoriteMovieListResponse(rating);
+    });
+};
+
+
 
