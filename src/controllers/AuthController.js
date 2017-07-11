@@ -191,3 +191,20 @@ exports.getProfile = function (activeUser, UserInfoRepo, FailedSuccessUserInfoRe
         return toReturn;
     });
 };
+
+/**
+ * @AutoWired()
+ * @Controller()
+ * @Post("getَUserProfile")
+ * @RequestType("IdRequest")
+ * @ResponseType("FailedSuccessUserInfoResponse")
+ * @LoginRequired()
+ * @ActiveUser()
+ */
+exports.getUserProfile = function (activeUser, requestData, UserInfoRepo, FailedSuccessUserInfoResponse) {
+    return UserInfoRepo.getInfo(requestData.id.value()).then(function(result){
+        let toReturn = new FailedSuccessUserInfoResponse();
+        toReturn.initFromData(result, true);
+        return toReturn;
+    });
+};
