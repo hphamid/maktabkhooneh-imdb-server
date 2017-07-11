@@ -184,7 +184,7 @@ exports.editProfile = function (activeUser, requestData, FileManager, UserInfoRe
  * @LoginRequired()
  * @ActiveUser()
  */
-exports.editProfile = function (activeUser, UserInfoRepo, FailedSuccessUserInfoResponse) {
+exports.getProfile = function (activeUser, UserInfoRepo, FailedSuccessUserInfoResponse) {
     return UserInfoRepo.getInfo(activeUser.userId).then(function(result){
         let toReturn = new FailedSuccessUserInfoResponse();
         toReturn.initFromData(result, true);
