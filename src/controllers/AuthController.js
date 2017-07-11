@@ -175,3 +175,19 @@ exports.editProfile = function (activeUser, requestData, FileManager, UserInfoRe
     });
 
 };
+
+/**
+ * @AutoWired()
+ * @Controller()
+ * @Post("getProfile")
+ * @ResponseType("FailedSuccessUserInfoResponse")
+ * @LoginRequired()
+ * @ActiveUser()
+ */
+exports.editProfile = function (activeUser, UserInfoRepo, FailedSuccessUserInfoResponse) {
+    return UserInfoRepo.getInfo(activeUser.userId).then(function(result){
+        let toReturn = new FailedSuccessUserInfoResponse();
+        toReturn.initFromData(result, true);
+        return toReturn;
+    });
+};

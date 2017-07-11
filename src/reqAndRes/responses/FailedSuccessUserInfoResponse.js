@@ -26,7 +26,7 @@ FailedSuccessUserInfoResponse.prototype._name = function(){
     return "FailedSuccessUserInfoResponse";
 };
 
-UserInfoResponse.prototype.initFromData = function (userInfo, isPrivate) {
+FailedSuccessUserInfoResponse.prototype.initFromData = function (userInfo, isPrivate) {
     if (!userInfo) {
         return;
     }
