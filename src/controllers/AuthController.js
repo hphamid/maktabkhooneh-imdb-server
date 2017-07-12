@@ -195,7 +195,7 @@ exports.getProfile = function (activeUser, UserInfoRepo, FailedSuccessUserInfoRe
 /**
  * @AutoWired()
  * @Controller()
- * @Post("getَUserProfile")
+ * @Post("getUserProfile")
  * @RequestType("IdRequest")
  * @ResponseType("FailedSuccessUserInfoResponse")
  * @LoginRequired()
