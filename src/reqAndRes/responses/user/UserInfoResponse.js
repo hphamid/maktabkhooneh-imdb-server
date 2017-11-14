@@ -29,6 +29,7 @@ UserInfoResponse.prototype.init = function () {
     this.email = new StringField();
     this.imageUri = new StringField();
     this.description = new StringField();
+    this.creationDate = new StringField();
     BaseObject.prototype.init.apply(this, arguments);
 };
 
@@ -42,7 +43,8 @@ UserInfoResponse.prototype.initFromData = function (userInfo, isPrivate) {
             userId: userInfo.getUserId(),
             fullName: userInfo.getFullName(),
             imageUri: userInfo.getProfilePic(),
-            description: userInfo.getDescription()
+            description: userInfo.getDescription(),
+            creationDate: userInfo.getCreationDate()
         }
     } else {
         data = {
@@ -50,7 +52,8 @@ UserInfoResponse.prototype.initFromData = function (userInfo, isPrivate) {
             fullName: userInfo.getFullName(),
             email: userInfo.getEmail(),
             imageUri: userInfo.getProfilePic(),
-            description: userInfo.getDescription()
+            description: userInfo.getDescription(),
+            creationDate: userInfo.getCreationDate()
         }
     }
     this.init(data);

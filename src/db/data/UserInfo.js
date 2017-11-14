@@ -13,7 +13,7 @@ var UserInfo = Backtory.Object.extend('UserInfo',{
     getDescription(){return this.get(UserInfo.Col.DESCRIPTION)},
     getProfilePic(){return this.get(UserInfo.Col.PROFILE_PIC)},
     getEmail(){return this.get(UserInfo.Col.EMAIL)},
-    getFavoriteMovies(){return this.get(UserInfo.Col.FavoriteMovies)},
+    getCreationDate(){return this.get(UserInfo.Col.CreationDate)},
 
     setId(value){this.set(UserInfo.Col.ID, value)},
     setUserId(value){this.set(UserInfo.Col.USER_ID, value)},
@@ -31,6 +31,7 @@ UserInfo.Col = {
     get DESCRIPTION(){return 'description'},
     get PROFILE_PIC(){return 'profilePic'},
     get EMAIL(){return 'email'},
+    get CreationDate(){return 'createdAt'},
 };
 
 Backtory.Object.registerSubclass(UserInfo.Name, UserInfo);
